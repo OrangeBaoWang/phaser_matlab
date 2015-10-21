@@ -35,7 +35,7 @@ for idx = 1 : length(x)
     for jdx = 1 : numAllpass
         y1 = y;
         y = y * -delayCoeff + unitDelay(jdx);
-        unitDelay(jdx) = y * delayCoeff + 1;
+        unitDelay(jdx) = y * delayCoeff + y1;
     end
     
     output(idx) =  x(idx) + y * depth;
